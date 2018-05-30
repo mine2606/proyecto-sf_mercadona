@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Producto
      * @ORM\JoinColumn(nullable=false)
      */
     private $categoria;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Cantidad", mappedBy="productos")
+     */
+    private $cantidades;
+
+    public function __construct()
+    {
+        $this->cantidades = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -86,6 +98,37 @@ class Producto
     public function setCategoria(?Categoria $categoria): self
     {
         $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Cantidad[]
+     */
+    public function getCantidades(): Collection
+    {
+        return $this->cantidades;
+    }
+
+    public function addCantidade(Cantidad $cantidade): self
+    {
+        if (!$this->cantidades->contains($cantidade)) {
+            $this->cantidades[] = $cantidade;
+            $cantidade->setProductos($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCantidade(Cantidad $cantidade): self
+    {
+        if ($this->cantidades->contains($cantidade)) {
+            $this->cantidades->removeElement($cantidade);
+            // set the owning side to null (unless already changed)
+            if ($cantidade->getProductos() === $this) {
+                $cantidade->setProductos(null);
+            }
+        }
 
         return $this;
     }

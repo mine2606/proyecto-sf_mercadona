@@ -1,1 +1,48 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.navbar a {           
+
+    color:#47ad74;  
+
+
+}
+
+.o-navbar-fluid>.o-alert>a>p{
+
+    background-color:#f8d7da;
+    color: #a02129;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: Muli;
+    border-radius: 10px;
+
+}	
+
+#imagen {
+	background-image: url("https://www.mercadona.es/img/header-medium.088535.jpg");
+	background-position: center top;
+    background-size: 100% auto;
+
+
+}
+
+#imagen p{
+	font-size: 40px;
+	font-family: PT Serif;
+	font-weight: 600;
+	color: white;
+	text-align: left;
+}
+
+#menu {
+	background-color: white;
+}
+
+.form-control {
+	width: 250px;
+}
+

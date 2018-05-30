@@ -27,6 +27,16 @@ class Direccion
      */
     private $cliente;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $calle;
+
+    /**
+     * @ORM\Column(type="string", length=3)
+     */
+    private $numero;
+
     public function getId()
     {
         return $this->id;
@@ -52,6 +62,30 @@ class Direccion
     public function setCliente(?Cliente $cliente): self
     {
         $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    public function getCalle(): ?string
+    {
+        return $this->calle;
+    }
+
+    public function setCalle(string $calle): self
+    {
+        $this->calle = $calle;
+
+        return $this;
+    }
+
+    public function getNumero(): ?string
+    {
+        return $this->numero;
+    }
+
+    public function setNumero(string $numero): self
+    {
+        $this->numero = $numero;
 
         return $this;
     }

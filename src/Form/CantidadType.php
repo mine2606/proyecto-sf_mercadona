@@ -2,25 +2,25 @@
 
 namespace App\Form;
 
-use App\Entity\Pedido;
+use App\Entity\Cantidad;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PedidoType extends AbstractType
+class CantidadType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            
-            ->add('cliente')
+            ->add('pedidos')
+            ->add('productos')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Pedido::class,
+            'data_class' => Cantidad::class,
         ]);
     }
 }

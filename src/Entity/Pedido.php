@@ -18,52 +18,44 @@ class Pedido
      */
     private $id;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Producto")
-     */
-    private $productos;
-
+    
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Cliente", inversedBy="pedidos")
      * @ORM\JoinColumn(nullable=false)
      */
     private $cliente;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $fcompra;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $fentrega;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Cantidad", mappedBy="pedidos")
+     */
+    private $cantidades;
+
     public function __construct()
     {
-        $this->productos = new ArrayCollection();
+        $this->cantidades = new ArrayCollection();
     }
+
+   
 
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|Producto[]
-     */
-    public function getProductos(): Collection
-    {
-        return $this->productos;
-    }
+    
 
-    public function addProducto(Producto $producto): self
-    {
-        if (!$this->productos->contains($producto)) {
-            $this->productos[] = $producto;
-        }
 
-        return $this;
-    }
-
-    public function removeProducto(Producto $producto): self
-    {
-        if ($this->productos->contains($producto)) {
-            $this->productos->removeElement($producto);
-        }
-
-        return $this;
-    }
+    
 
     public function getCliente(): ?Cliente
     {
@@ -73,6 +65,61 @@ class Pedido
     public function setCliente(?Cliente $cliente): self
     {
         $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    public function getFcompra(): ?\DateTimeInterface
+    {
+        return $this->fcompra;
+    }
+
+    public function setFcompra(\DateTimeInterface $fcompra): self
+    {
+        $this->fcompra = $fcompra;
+
+        return $this;
+    }
+
+    public function getFentrega(): ?\DateTimeInterface
+    {
+        return $this->fentrega;
+    }
+
+    public function setFentrega(\DateTimeInterface $fentrega): self
+    {
+        $this->fentrega = $fentrega;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Cantidad[]
+     */
+    public function getCantidades(): Collection
+    {
+        return $this->cantidades;
+    }
+
+    public function addCantidade(Cantidad $cantidade): self
+    {
+        if (!$this->cantidades->contains($cantidade)) {
+            $this->cantidades[] = $cantidade;
+            $cantidade->setPedidos($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCantidade(Cantidad $cantidade): self
+    {
+        if ($this->cantidades->contains($cantidade)) {
+            $this->cantidades->removeElement($cantidade);
+            // set the owning side to null (unless already changed)
+            if ($cantidade->getPedidos() === $this) {
+                $cantidade->setPedidos(null);
+            }
+        }
 
         return $this;
     }

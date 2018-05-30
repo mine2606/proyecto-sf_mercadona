@@ -33,6 +33,16 @@ class Cliente
      */
     private $pedidos;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $apellidos;
+
+    /**
+     * @ORM\Column(type="string", length=6)
+     */
+    private $cp;
+
     public function __construct()
     {
         $this->direcciones = new ArrayCollection();
@@ -114,6 +124,30 @@ class Cliente
                 $pedido->setCliente(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getApellidos(): ?string
+    {
+        return $this->apellidos;
+    }
+
+    public function setApellidos(string $apellidos): self
+    {
+        $this->apellidos = $apellidos;
+
+        return $this;
+    }
+
+    public function getCp(): ?string
+    {
+        return $this->cp;
+    }
+
+    public function setCp(string $cp): self
+    {
+        $this->cp = $cp;
 
         return $this;
     }
