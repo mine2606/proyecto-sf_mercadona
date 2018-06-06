@@ -1,0 +1,128 @@
+
+#menu {
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.form-control {
+	background-color: #e9ecef;
+	border-left: none;
+}
+
+.form-control:hover {
+	background-color: #e9ecef;
+}
+
+.nav-link {
+	color: #878787;
+}
+
+.nav-link:hover {
+	color: black;
+}
+
+.col-md-4 {
+	margin-top: 100px;
+	background: rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(84, 128, 128), rgb(108, 180, 180)) repeat scroll 0% 0%;
+	color: white;
+	border-bottom-left-radius: 9px;
+   	border-top-left-radius: 9px;
+	
+	
+}
+
+.col-md-8 {
+	background-image: url("https://storage.googleapis.com/itg_statics_mimercadona/media/seasons/banners/banner_healthy.jpg");  
+	background-size: cover;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	width: 100%;
+	border-radius: 0 8px 8px 0;
+	margin-top: 100px;
+
+}
+
+.btn-success {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	background-color: #8bb4b4;
+	border: none;
+	border-radius: 30px;
+	font-family: Muli;
+
+}
+
+.btn-success:hover {
+	background-color: #8bb4b4 !important;
+	box-shadow: 0 0 0 0 !important;
+
+}
+
+.btn-success:focus {
+	
+	box-shadow: 0 0 0 0 !important;
+
+}
+
+
+h2 {
+	margin-top: 30px;
+	
+}
+
+.text {
+	margin-left: 120px;
+	margin-top: 50px;
+	font-weight: bold;
+}
+
+.col15 {
+	width: 20%;
+
+}
+
+
+.btn-outline-warning {
+	color: #714000 ;
+	border-radius: 30px;
+
+
+}
+
+.btn-outline-warning:hover {
+	background-color: #fee3ac;
+}
+
+.card-body, .card-title {
+	font-size: 0.9em;
+}
+
+
+.nav-link:hover {
+
+	border-bottom: solid;
+	border-color: #009660;
+		
+}
+
+.card-text {
+	font-size: 0.7em;
+}
+
+#negrita {
+	font-weight: bold;
+}
+
+
+.col15 {
+	padding-bottom: 10px;
+
+
+	
+}
+
+.card:hover {
+	box-shadow: 0 4px 12px 0 rgba(59,57,55,.2);
+}
+

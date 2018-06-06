@@ -4,16 +4,38 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
+
+/**
+* @Route("/principal")
+*/
 class PrincipalController extends Controller
 {
+   /**
+    * @Route("", name="principal_home")
+    */
+   public function index()
+   {        return $this->render('principal/index.html.twig', [
+           'controller_name' => 'PrincipalController',
+       ]);
+   }
+
+
+    
     /**
-     * @Route("/principal", name="principal")
-     */
-    public function index()
-    {
-        return $this->render('principal/index.html.twig', [
-            'controller_name' => 'PrincipalController',
-        ]);
-    }
+    * @Route("/recibeform", name="formulariocp")
+    */
+   public function recibeformulario(Request $request)    {
+       $codigopostal = intval($request->request->get("inputcp")); 
+
+       if($codigopostal > 46000 && $codigopostal < 47000){
+           return $this->redirectToRoute("tienda_home");
+        }        
+
+        else {
+            return $this->redirectToRoute("principal_home");
+        }
+   }
+
 }

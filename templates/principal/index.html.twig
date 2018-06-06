@@ -1,88 +1,38 @@
-{% extends 'base.html.twig' %}
+{% extends 'principal/base.html.twig' %}
 
 {% block title %}Mercadona{% endblock %}
 
 
-{% block header %}
-	
-	<div class="o-navbar-fluid" style="margin-top: 0px;text-align: center">
-    <div class="o-alert">
-        <a trget="_blank" hhref="">
-            <p>Comunicado Bebida Fresa Plátano Soja Hacendado</p>
-        </a>
-    </div> 
-
-<div id="imagen">
-	<div id="menu" class="row">		
-		<nav class="navbar navbar-light ">
-			<a class="navbar-brand" href="#">
-			    <img src="https://www.mercadona.com/estaticos/images/mercadona_logo/es/mercadona-imagotipo-color-300.png" width="200" height="30" class="d-inline-block align-top" alt="">			    
-			</a>
-		  	<ul class="nav">
-				 <li class="nav-item">
-				    <a class="nav-link" href="#">Conócenos</a>
-				 </li>
-				 <li class="nav-item">
-				    <a class="nav-link" href="#">Supermercados</a>
-				 </li>
-				 <li class="nav-item">
-				    <a class="nav-link" href="#">Trabaja con nosotros</a>
-				 </li>
-				 <li class="nav-item">
-				    <a class="nav-link" href="#">Atención al cliente</a>
-				 </li>
-			</ul>
-		</nav>			
-	</div>
-
-	<div class="row">
-		<div class="col">
-		</div>
-		<div class="col">
-			<p>Empieza tu compra<br> en Mercadona</p>
-			<div>
-				<div class="row">
-					<div class="col">
-						<label for="inputPassword2" class="sr-only">Código postal</label>
-						<input type="text" class="form-control" id="inputPassword2" placeholder="Código postal">
-					</div>
-					<div class="col">
-						<button type="submit" class="btn btn-success mb-2">ENTRAR  <i class="fas fa-arrow-right"></i></button>
-					</div>
-				</div>
-			</div>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div>
-</div>	
-
-{% endblock %}
 
 
 {% block body %}
 
-		  
-			  
 
-	<div class="row">
-		<div class="col">
-			<div class="card" style="width: 18rem;">
-				 <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-				<div class="card-body">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">			
+				<img src="{{ asset('imagen/logo-cabecera-index1.png') }}" width="80" height="80" alt="Carro">
 				    <h5 class="card-title">Nueva web y servicio<br> en Valencia centro</h5>
-				    <p class="card-text">Tu compra en casa de 7:00 a 22:00. Tramos<br> de 1 hora. Calidad y frescura como en tu <br>tienda.</p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
-				</div>
+				    <p class="card-text">Tu compra en casa de 7:00 a 22:00. Tramos de 1 hora. Calidad y frescura como en tu tienda.</p> 				
 			</div>
-		</div>
+			
 
-		<div class="col">			
-		</div>
+			<div class="col-sm">			
+				<img src="{{ asset('imagen/logo-cabecera-index2.png') }}" height="80" width="80" alt="Card image cap">			
+				    <h5 class="card-title">Próximamente en otras zonas</h5>	    
+				    <p class="card-text">Si quieres que te avisemos, déjanos tu email y tu código postal.</p>
+				    <a href="#" class="card-link">Sí, avisadme</a>		 
+			</div>			
+			
 
-		<div class="col">			
+			<div class="col-sm">			
+				<img src="{{ asset('imagen/logo-cabecera-index3.png') }}" height="80" width="80" alt="Card image cap">				
+				    <h5 class="card-title">La versión clásica sigue existiendo</h5>
+				    <p class="card-text">Si al introducir tu código postal, aún no llegamos a tu zona, puedes seguir comprando en Mercadona a través de la web de siempre.</p>
+			</div>
 		</div>
 	</div>
 
+
 {% endblock %}
+

@@ -1,0 +1,95 @@
+.navbar a, a, a:hover{           
+
+    color:#47ad74;  
+
+
+}
+
+.o-navbar-fluid>.o-alert>a>p{
+
+    background-color:#f8d7da;
+    color: #a02129;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: Muli;
+    border-radius: 10px;
+
+}	
+
+#imagen {
+	background-image: url("https://www.mercadona.es/img/header-medium.088535.jpg");
+	background-position: center top;
+    background-size: 100% auto;
+    margin-bottom: 50px;
+   
+
+
+}
+
+#imagen p{
+	font-size: 40px;
+	font-family: PT Serif;
+	font-weight: 600;
+	color: white;
+	text-align: left;
+    padding-top: 80px;
+}
+
+#menu {
+	background-color: white;
+}
+
+.form-control, .form-control:focus {
+	
+    border: 0px;
+    box-shadow: none;
+    
+   
+}
+
+.container{
+    text-align: left;
+
+}
+
+.form-control, .form-control:focus{
+
+    border:0px;
+    box-shadow: none;
+    height: 50px;
+
+}
+
+.btn, .btn:hover{
+
+    background-color: #00aa55;
+    border: none;
+    height: 50px;
+    letter-spacing: 2px;
+    font-family: Muli;
+    font-size: .875rem;
+    word-spacing: 13px;
+}
+
+#final {
+    background-color: #26414a;
+    color: white;
+    padding-top: 50px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+
+ol{
+    line-height: 2em;
+    color: #cdd1d3;  
+}
+
+
+h5 {
+    font-weight: bolder;
+}

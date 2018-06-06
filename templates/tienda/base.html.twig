@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+      {% block stylesheets %}
+            {{ parent() }}
+            <link rel='stylesheet' href="{{ asset('build/apptienda.css')}}">
+        {% endblock %}
+   
+      {% block header %}
+        {% include 'tienda/_base/header.html.twig' %}
+      {% endblock %}
+
+      {% block body %} 
+      {% endblock %}
+
+      {% block footer %}
+        {% include 'tienda/_base/footer.html.twig' %}
+        
+      {% endblock %}
+
+      {% block javascripts %} 
+
+       {{ parent() }}
+       
+      {% endblock %}

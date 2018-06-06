@@ -7,7 +7,9 @@ var Encore = require('@symfony/webpack-encore');Encore
    // will create public/build/app.js and public/build/app.css
    .addEntry('app', './assets/js/app.js')
       
-   .addStyleEntry('appstyle', './assets/css/app.css')    
+   .addStyleEntry('appstyle', './assets/css/app.css')   
+   .addStyleEntry('appprincipal', './assets/css/appprincipal.css')
+   .addStyleEntry('apptienda', './assets/css/apptienda.css')    
    // allow legacy applications to use $/jQuery as a global variable
    .autoProvidejQuery()    
    // enable source maps during development
